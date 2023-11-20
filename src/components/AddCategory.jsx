@@ -2,11 +2,13 @@ import { useState } from "react";
 
 export const AddCategory = () => {
 
-    const [inputValue, setinputValue] = useState('One Punch') 
+    const [inputValue, setinputValue] = useState('Favor escribir el gif a buscar') 
 
-    const onInputChange = () => {
+    const onInputChange = (write) => {
 
-        setinputValue('Hola Elyn Taveras')
+        console.log(write.target.value)
+
+        setinputValue( write.target.value )
     }
 
     return (
@@ -14,7 +16,7 @@ export const AddCategory = () => {
             type="text"
             placeholder="Busqueda de Git"
             value={ inputValue }
-            onChange={ onInputChange }
+            onChange={ (write) => onInputChange(write) }
         />
     )
 }   
