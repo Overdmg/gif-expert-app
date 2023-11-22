@@ -13,6 +13,8 @@ export const GifExpertApp = () => {
    //  console.log(categories);
     
 
+//   esto es una [prueba]
+
     return(
         <>
             {/* Titulo */}

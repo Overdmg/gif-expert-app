@@ -17,7 +17,7 @@ export const AddCategory = ({setCategories}) => {
             // setear el valor del input
             setCategories([inputValue])
             
-          
+            // esto es una prueba
 
     } 
 
