@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-export const AddCategory = ({setCategories}) => {
+export const AddCategory = ( {setCategories} ) => {
     
 
-    const [inputValue, setinputValue] = useState('Favor escribir el gif a buscar') 
+    const [inputValue, setinputValue] = useState('') 
 
     const onInputChange = ( {target} ) => {
            //console.log(target.value)
@@ -14,18 +14,20 @@ export const AddCategory = ({setCategories}) => {
             textR.preventDefault();
             console.log(inputValue);
         
-            // setear el valor del input
-            setCategories([inputValue])
-            
-            // esto es una prueba
+            if ( inputValue.trim().length <= 1) return;
 
+            // setear el valor del input
+            setCategories( categories => [ inputValue, ...categories ] ); 
+            
+            setinputValue('');
+           
     } 
 
     return (
-        <form onSubmit={ (textR) => onSubmit(textR) }>
+        <form onSubmit={ onSubmit }>
             <input
                 type="text"
-                placeholder="Busqueda de Git"
+                placeholder="Busqueda de Gifs"
                 value={ inputValue }
                 onChange={  onInputChange }
             />

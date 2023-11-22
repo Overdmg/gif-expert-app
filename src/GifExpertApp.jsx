@@ -6,14 +6,16 @@ export const GifExpertApp = () => {
     const [categories, setCategories] = useState([ 'One Punch', 'One Pieace', 'DBZ', ]);
 
 
+
     const onAddCategory = () =>{        
           setCategories(['Elyn', ...categories])
+        
     }
 
    //  console.log(categories);
     
 
-//   esto es una [prueba]
+
 
     return(
         <>
