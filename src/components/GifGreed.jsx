@@ -3,7 +3,7 @@ export const GifGreed = ({ category }) => {
   
   const getGifs = async() => {
 
-    const url = `https://api.giphy.com/v1/gifs/trending?api_key=FHvdG3TRHUGn745JL1kooipL2MocGZOt&q=${ category }&limit=20`;
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=FHvdG3TRHUGn745JL1kooipL2MocGZOt&q=${ category }&limit=20`;
     const resp = await fetch( url );
     const { data } = await resp.json();
 
