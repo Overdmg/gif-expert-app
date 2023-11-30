@@ -5,9 +5,10 @@ export const GifGreed = ({ category }) => {
 
     const [images, setImages] = useState([]);
 
-
-
-    const getImages = async () => {
+    //console.log(images[6].title)
+    const listItems = images.map()
+    
+      const getImages = async () => {
             const newImages = await getGifs( category );
             setImages(newImages);
     }
@@ -23,11 +24,9 @@ export const GifGreed = ({ category }) => {
                 <h3> { category } </h3>
                 <ol>
                     {/* images.map ...*/}
-                    {console.log( validar )}
-                    <li>Titulo</li>
-                    <li>Titulo</li>
-                    <li>Titulo</li>
-                    <li>Titulo</li>
+                   
+                    <li>Titulo:</li>
+
                 </ol>
             </>
      )
