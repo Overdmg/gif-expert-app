@@ -1,28 +1,23 @@
+import { useState, useEffect } from "react";
+import { getGifs } from "../helpers/getGifs";
 
 export const GifGreed = ({ category }) => {
   
-  const getGifs = async() => {
+    const [counter, setcounter] = useState(10);
 
-    const url = `https://api.giphy.com/v1/gifs/search?api_key=FHvdG3TRHUGn745JL1kooipL2MocGZOt&q=${ category }&limit=20`;
-    const resp = await fetch( url );
-    const { data } = await resp.json();
+    useEffect( () => { 
+        
+        getGifs(category);
 
-    const gifs = data.map(  img => ({
-        id: img.id,
-        title: img.title,
-        url: img.images.downsized_medium.url
+    }, [])
 
-    }));
-
-    console.log(gifs);
-  }
-
-    getGifs();
+    getGifs( category );
 
     return (
             <>
-                <h3> { category} </h3>
-               
+                <h3> { category } </h3>
+                <h5> { counter } </h5> 
+                <button onClick={ () => setcounter( counter +1 ) }> +1 </button>              
             </>
      )
 }
