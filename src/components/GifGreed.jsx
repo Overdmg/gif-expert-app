@@ -2,22 +2,33 @@ import { useState, useEffect } from "react";
 import { getGifs } from "../helpers/getGifs";
 
 export const GifGreed = ({ category }) => {
-  
-    const [counter, setcounter] = useState(10);
+
+    const [images, setImages] = useState([]);
+
+
+
+    const getImages = async () => {
+            const newImages = await getGifs( category );
+            setImages(newImages);
+    }
 
     useEffect( () => { 
-        
-        getGifs(category);
+
+        getImages();
 
     }, [])
-
-    getGifs( category );
 
     return (
             <>
                 <h3> { category } </h3>
-                <h5> { counter } </h5> 
-                <button onClick={ () => setcounter( counter +1 ) }> +1 </button>              
+                <ol>
+                    {/* images.map ...*/}
+                    {console.log( validar )}
+                    <li>Titulo</li>
+                    <li>Titulo</li>
+                    <li>Titulo</li>
+                    <li>Titulo</li>
+                </ol>
             </>
      )
 }
